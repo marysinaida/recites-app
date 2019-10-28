@@ -1,14 +1,13 @@
-import { Component } from '@angular/core';
-import {Quote} from './quote';
+import { Component, OnInit } from '@angular/core';
+import { Quote } from '../quote';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-quote',
+  templateUrl: './quote.component.html',
+  styleUrls: ['./quote.component.css']
 })
-export class AppComponent {
-  title = 'quote';
-  quotes:Quote [] =[
+export class QuoteComponent implements OnInit {
+  quotes:Quote[] =[
     {id:1,name:'"Change the world by being yourself"',description:'Author,upvote,downvote'},
     {id:2,name:'"I don’t need it to be easy, I need it to be worth it. "',description:'Author,upvote,downvote'},
     {id:3,name:'"Reality is wrong, dreams are for real. "',description:'Author,upvote,downvote'},
@@ -16,5 +15,11 @@ export class AppComponent {
     {id:5,name:'"Turn your wounds into wisdom. "',description:'Author,upvote,downvote'},
     {id:6,name:'"Happiness depends upon ourselves. "',description:'Author,upvote,downvote'},
   ];
-  
+
+
+  constructor() { }
+
+  ngOnInit() {
   }
+
+}
