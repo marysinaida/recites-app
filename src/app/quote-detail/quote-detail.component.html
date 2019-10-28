@@ -1,15 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-        <p>
-                {{quote.recite}}
-            </p>
-            <button (click)='quoteComplete(true)'>Done</button>
-</body>
-</html>
+
+    <div>
+        <span class='fa fa-thumbs-up'></span>
+        <span class='fa fa-thumbs-down'></span>
+    </div>
+    <p>This quote will be complete in {{quote.completeDate|dateCount}} days</p>
+    <button (click)='quoteComplete(true)'class = "btn btn-outline-danger">Delete Quote</button>

@@ -1,38 +1,29 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Cookie&display=swap" rel="stylesheet">
-    <title>Inspirational Quotes</title>
-</head>
-
-<body>
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-        <h1>My Quotes</h1>
-        <p>welcome to my inspirational <strong>quotes</strong>:</p>
-        <hr>
-        <ul>
+                <h1>My Quotes</h1>
+                <p>welcome to my inspirational <strong>quotes</strong>:</p>
+                <hr>
+                
+                    <div *ngFor='let quote of quotes;let i = index'>
+                        <div>
+                        <h4 id={{i}} appHighlight>{{quote.name}} due on {{quote.completeDate|date|uppercase}}</h4>
+                        <button (click)='toggleDetails(i)'>See More</button>
+                        </div>
+                        <div *ngIf='quote.showRecite'>
+                        <app-quote-detail *ngIf='quote.showRecite' [quote]='quote' (isComplete)='deleteQuote($event,i)'>
+                        </app-quote-detail>
+                        </div>
+                
+            
+            </div>
 
-           <div *ngFor='let quote of quotes;let i = index'>
-               <li appHighlight>{{quote.name}} due on {{quote.completeDate|date|uppercase}}</li> 
-               <button (click)='toggleDetails(i)'>See More</button>
-                <app-quote-detail *ngIf='quote.showRecite' [quote]='quote'(isComplete)='completeQuote($event,i)'></app-quote-detail>
-           </div>
-        </ul>
-        </div>
+            <div class="col-md-6">
 
-        <div class="col-md-6">
-
-        </div>
+            </div>
         </div>
     </div>
+    </div>
 
-    
-</body>
 
-</html>
