@@ -10,17 +10,26 @@
 </head>
 
 <body>
-    <div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
         <h1>My Quotes</h1>
         <p>welcome to my inspirational <strong>quotes</strong>:</p>
         <hr>
         <ul>
             <li *ngFor='let quote of quotes'>
-                {{quote.name}}
+                {{quote.name}} 
                 <app-quote-detail [quote]='quote'></app-quote-detail>
             </li>
         </ul>
+        </div>
+
+        <div class="col-md-6">
+            
+        </div>
+        </div>
     </div>
+
     
 </body>
 
