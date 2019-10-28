@@ -1,5 +1,6 @@
 export class Quote {
-    id: number;
-    name: string;
-    recite:string;
+    showRecite: boolean;
+    constructor(public id: number,public name: string,public recite: string){
+      this.showRecite=false;
+}
 }
