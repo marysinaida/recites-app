@@ -20,7 +20,7 @@
 
            <div *ngFor='let quote of quotes;let i = index'>
                <li>{{quote.name}}</li>
-               <button (click) = 'toggleDetails(i)'>See More</button>
+               <button (click)='toggleDetails(i)'>See More</button>
                 <app-quote-detail *ngIf='quote.showRecite' [quote]='quote'></app-quote-detail>
            </div>
         </ul>

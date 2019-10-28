@@ -16,6 +16,10 @@ export class QuoteComponent implements OnInit {
     new Quote(6,'"Happiness depends upon ourselves. "','Author,upvote,downvote'),
   ];
 
+  toggleDetails(index){
+    this.quotes[index].showRecite = !this.quotes[index].showRecite;
+  }
+
 
   constructor() { }
 
