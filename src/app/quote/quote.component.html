@@ -1,29 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h1>My Quotes</h1>
+            <p>welcome to my inspirational <strong>quotes</strong>:</p>
+            <hr>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <h1>My Quotes</h1>
-                <p>welcome to my inspirational <strong>quotes</strong>:</p>
-                <hr>
+            <div *ngFor='let quote of quotes;let i = index'>
+                <div>
+                    <h4 id={{i}} appHighlight>{{quote.name}} due on {{quote.completeDate|date|uppercase}}</h4>
+                    <button (click)='toggleDetails(i)'>See More</button>
+                </div>
+                <div *ngIf='quote.showRecite'>
+                    <app-quote-detail *ngIf='quote.showRecite' [quote]='quote' (isComplete)='deleteQuote($event,i)'>
+                    </app-quote-detail>
+                </div>
+
                 
-                    <div *ngFor='let quote of quotes;let i = index'>
-                        <div>
-                        <h4 id={{i}} appHighlight>{{quote.name}} due on {{quote.completeDate|date|uppercase}}</h4>
-                        <button (click)='toggleDetails(i)'>See More</button>
-                        </div>
-                        <div *ngIf='quote.showRecite'>
-                        <app-quote-detail *ngIf='quote.showRecite' [quote]='quote' (isComplete)='deleteQuote($event,i)'>
-                        </app-quote-detail>
-                        </div>
-                
-            
-            </div>
-
-            <div class="col-md-6">
-
             </div>
         </div>
-    </div>
-    </div>
-
+    
+    <div class="col-md-6">
+        <app-quote-form></app-quote-form>
+      </div>
+      </div>
 
