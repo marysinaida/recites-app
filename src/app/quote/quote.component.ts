@@ -15,6 +15,12 @@ export class QuoteComponent implements OnInit {
     new Quote(5,'"Turn your wounds into wisdom. "','Author,upvote,downvote',new Date(2019,0,18)),
     new Quote(6,'"Happiness depends upon ourselves. "','Author,upvote,downvote',new Date(2019,7,9)),
   ];
+  addNewQuote(quote){
+    let quoteLength = this.quotes.length;
+    quote.id = quoteLength+1;
+    quote.completeDate = new Date(quote.completeDate)
+    this.quotes.push(quote)
+  }
 
   toggleDetails(index){
     this.quotes[index].showRecite = !this.quotes[index].showRecite;
