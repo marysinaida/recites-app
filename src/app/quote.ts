@@ -1,6 +1,7 @@
 export class Quote {
     showRecite: boolean;
-    constructor(public id: number,public name: string,public recite: string ,public completeDate: Date){
+  length: number;
+    constructor(public id: number,public name: string,public author:string ,public upvote:number,public downvote:number,public completeDate: Date ){
       this.showRecite=false;
 }
 }

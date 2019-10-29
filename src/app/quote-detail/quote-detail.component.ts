@@ -14,6 +14,31 @@ export class QuoteDetailComponent implements OnInit {
  quoteComplete(complete:boolean){
    this.isComplete.emit(complete);
  }
+
+//  upvote:number=0;
+//  downvote:number=0;
+
+ likeUpvote(i){
+   this.quote[i].upvote++;
+ }
+ dislikeDownvote(i){
+  this.quote[i].downvote++;
+}
+
+// preNum:number
+// lastNum:number
+// counter:number
+// highestvote(){
+
+
+
+// for(this.counter=0; this.counter<this.quote.length; this.counter++){
+//   this.lastNum=this.quote[this.counter].numberOfLikes;
+//   if(this.lastNum>this.preNum){this.preNum=this.lastNum}
+// }
+// return this.preNum
+// }
+
  constructor() { }
 
   ngOnInit() {

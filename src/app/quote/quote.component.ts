@@ -8,12 +8,12 @@ import { Quote } from '../quote';
 })
 export class QuoteComponent implements OnInit {
   quotes:Quote[] =[
-    new Quote( 1,'"Change the world by being yourself"','Author,upvote,downvote',new Date(2020,3,14)),
-    new Quote(2,'"I don’t need it to be easy, I need it to be worth it. "','Author,upvote,downvote',new Date(2030,3,14)),
-    new Quote(3,'"Reality is wrong, dreams are for real. "','Author,upvote,downvote',new Date(2019,2,14)),
-    new Quote(4,'"May your choices reflect your hopes, not your fears."','Author,upvote,downvote',new Date(2019,6,9)),
-    new Quote(5,'"Turn your wounds into wisdom. "','Author,upvote,downvote',new Date(2019,0,18)),
-    new Quote(6,'"Happiness depends upon ourselves. "','Author,upvote,downvote',new Date(2019,7,9)),
+    new Quote(1,'"Change the world by being yourself"','Author',0,0,new Date(2020,3,14)),
+    new Quote(2,'"I don’t need it to be easy, I need it to be worth it. "','Author',0,0,new Date(2030,3,14)),
+    new Quote(3,'"Reality is wrong, dreams are for real. "','Author',0,0,new Date(2019,2,14)),
+    new Quote(4,'"May your choices reflect your hopes, not your fears."','Author',0,0,new Date(2019,6,9)),
+    new Quote(5,'"Turn your wounds into wisdom. "','Author',0,0,new Date(2019,0,18)),
+    new Quote(6,"Happiness depends upon ourselves. ",'Author',0,0, new Date(2019,7,9)),
   ];
   addNewQuote(quote){
     let quoteLength = this.quotes.length;
