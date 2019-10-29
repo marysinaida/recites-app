@@ -2,16 +2,10 @@
   
 
             
-    <p>This quote will be complete in {{quote.completeDate|dateCount}} days</p>
-    <button (click)='quoteComplete(true)'class = "btn btn-outline-danger">Delete Quote</button>
-
-    <div>
-            <i class="fa fa-thumbs-up" aria-hidden="true" (click)="likeUpvote(i)"></i>
-            <i class="fa fa-thumbs-down ml-5" aria-hidden="true" (click)="dislikeDownvote(i)"></i>
-            <p><strong>Likes:</strong>{{quote.upvote}} <span><strong>Dislikes:</strong>{{quote.downvote}}</span></p>
-            </div>
+   
             
-    <div *ngFor='let quote of quotes; let i=index'>
+    <!-- <div *ngFor='let quote of quotes; let i=index'> -->
+      <!-- <div>
             <div id="quotes" class="mt-5">
               <p appHighlight *ngIf="highestUpvote()===quote.likeUpvote(i) && quote.likeUpvote(i)>0">
                 {{quote.theQuote}}
@@ -22,4 +16,4 @@
 
              
 </div>
-</div>
+</div> -->

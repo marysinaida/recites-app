@@ -25,26 +25,54 @@ export class QuoteComponent implements OnInit {
   toggleDetails(index){
     this.quotes[index].showRecite = !this.quotes[index].showRecite;
   }
-  completeQuote(isComplete,index){
-    if(isComplete){
-this.quotes.splice(index,1);
-    }
-  }
-  deleteQuote(isComplete, index){
-    if (isComplete) {
-      let toDelete = confirm(`Are you sure you want to delete ${this.quotes[index].name}?`)
+//   completeQuote(isComplete,index){
+//     if(isComplete){
+// this.quotes.splice(index,1);
+//     }
+//   }
+//   deleteQuote(isComplete, index){
+//     if (isComplete) {
+//       let toDelete = confirm(`Are you sure you want to delete ${this.quotes[index].name}?`)
 
-      if (toDelete){
-        this.quotes.splice(index,1)
-      }
-    }
-  }
+//       if (toDelete){
+//         this.quotes.splice(index,1)
+//       }
+//     }
+//   }
 
+
+quoteComplete(index:number){
+    let toDelete = confirm(`Are you sure you want to delete this quote?`)
+    
+    if (toDelete){
+            this.quotes.splice(index,1)
+        }
+}
+
+  likeUpvote(i){
+    this.quotes[i].upvote+=1;
+  }
+  dislikeDownvote(i){
+   this.quotes[i].downvote=+1;
+ }
+ 
+ bestQuote() {
+  let upVoteArr: number[] = [];
+  for (let i of this.quotes) {
+    upVoteArr.push(i.upvote);
+  }
+  let maxVote = Math.max(...upVoteArr);
+  let highestVotedQuote = this.quotes.find(quote => quote.upvote === maxVote);
+  if (highestVotedQuote.upvote > 0){
+  return highestVotedQuote.name;
+  }
+}
 
 
   constructor() { }
 
   ngOnInit() {
+    // console.log(this.bestQuote())
   }
 
 }

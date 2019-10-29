@@ -1,4 +1,5 @@
 <div class="container">
+    <div appHighlight *ngIf=bestQuote()>{{bestQuote()}}</div>
     <div class="row">
         <div class="col-md-6">
             <h1>My Quotes</h1>
@@ -7,13 +8,21 @@
 
             <div *ngFor='let quote of quotes;let i = index'>
                 <div>
-                    <h4 id={{i}} appHighlight>{{quote.name}} {{quote.quote}} due on {{quote.completeDate |date |uppercase}} </h4>
-                    <button (click)='toggleDetails(i)'>See More</button>
+                    <h4>{{quote.name}} {{quote.quote}} due on {{quote.completeDate |date |uppercase}} </h4>
+                    <p>This quote will be complete in {{quote.completeDate|dateCount}} days</p>
+                    <button (click)='quoteComplete(i)'class = "btn btn-outline-danger">Delete Quote</button>
+                
+                    <div>
+                            <i class="fa fa-thumbs-up" aria-hidden="true" (click)="likeUpvote(i)"></i>
+                            <i class="fa fa-thumbs-down ml-5" aria-hidden="true" (click)="dislikeDownvote(i)"></i>
+                            <p><strong>Likes:</strong>{{quote.upvote}} <span><strong>Dislikes:</strong>{{quote.downvote}}</span></p>
+                            </div>
+                    <!-- <button (click)='toggleDetails(i)'>See More</button> -->
                 </div>
-                <div *ngIf='quote.showRecite'>
+                <!-- <div *ngIf='quote.showRecite'>
                     <app-quote-detail *ngIf='quote.showRecite' [quote]='quote' (isComplete)='deleteQuote($event,i)'>
                     </app-quote-detail>
-                </div>
+                </div> -->
 
                 
             </div>

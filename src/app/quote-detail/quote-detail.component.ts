@@ -25,19 +25,19 @@ export class QuoteDetailComponent implements OnInit {
   this.quote[i].downvote++;
 }
 
-// preNum:number
-// lastNum:number
-// counter:number
-// highestvote(){
+preNum:number
+lastNum:number
+counter:number
+highestvote(){
 
 
 
-// for(this.counter=0; this.counter<this.quote.length; this.counter++){
-//   this.lastNum=this.quote[this.counter].numberOfLikes;
-//   if(this.lastNum>this.preNum){this.preNum=this.lastNum}
-// }
-// return this.preNum
-// }
+for(this.counter=0; this.counter<this.quote.length; this.counter++){
+  this.lastNum=this.quote[this.counter].numberOfLikes;
+  if(this.lastNum>this.preNum){this.preNum=this.lastNum}
+}
+return this.preNum
+}
 
  constructor() { }
 
