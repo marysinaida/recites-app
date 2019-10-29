@@ -3,7 +3,8 @@
 @import "~font-awesome/css/font-awesome.min.css";
 @import url('https://fonts.googleapis.com/css?family=Cookie&display=swap');
 body{
-    font-family: 'Cookie', cursive;   
+    font-family: 'Cookie', cursive;
+    font-size: 30px;   
 }
 
     
