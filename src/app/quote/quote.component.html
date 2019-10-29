@@ -8,14 +8,14 @@
 
             <div *ngFor='let quote of quotes;let i = index'>
                 <div>
-                    <h4>{{quote.name}} {{quote.quote}} due on {{quote.completeDate |date |uppercase}} </h4>
+                    <h4><strong>{{quote.name}} </strong>{{quote.quote}} due on {{quote.completeDate |date |uppercase}} </h4>
                     <p>This quote will be complete in {{quote.completeDate|dateCount}} days</p>
                     <button (click)='quoteComplete(i)'class = "btn btn-outline-danger">Delete Quote</button>
                 
                     <div>
                             <i class="fa fa-thumbs-up" aria-hidden="true" (click)="likeUpvote(i)"></i>
                             <i class="fa fa-thumbs-down ml-5" aria-hidden="true" (click)="dislikeDownvote(i)"></i>
-                            <p><strong>Likes:</strong>{{quote.upvote}} <span><strong>Dislikes:</strong>{{quote.downvote}}</span></p>
+                            <p>Likes:{{quote.upvote}} <span>Dislikes:{{quote.downvote}}</span></p>
                             </div>
                     <!-- <button (click)='toggleDetails(i)'>See More</button> -->
                 </div>
